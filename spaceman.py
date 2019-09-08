@@ -1,4 +1,5 @@
 import random
+import colorama
 
 def load_word():
     '''
