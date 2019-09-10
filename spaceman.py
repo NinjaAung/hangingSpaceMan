@@ -1,7 +1,20 @@
 import random
-import colorama
+import os
+import re
+from colorama import Fore
 
-# SpaceMan "drawings" Ninja's best attempt lol
+# ACSII Ninja's best attempt lol
+banner = '''
+_______________________________________________________________ 
+ _____                 _____             
+|   __|___ ___ ___ ___|     |___ ___ ___ 
+|__   | . | .'|  _| -_| | | | .'|   |   |
+|_____|  _|__,|___|___|_|_|_|__,|_|_|_|_|
+      |_|                                 
+By: Ninjer27                        Art: @http://patorjk.com/       
+________________________________________________________________
+'''
+
 spaceMan = [
     '''
 
@@ -45,7 +58,7 @@ spaceMan = [
          \ |
     |=======|
     ''',
-   '''
+    '''
         +---+
         |  |
         o  |
@@ -82,7 +95,7 @@ def load_word():
     words_list = f.readlines()
     f.close()
     
-    words_list = words_list[0].split(' ') #comment this line out if you use a words.txt file with each word on a new line
+    words_list = words_list[0].split(' ')
     secret_word = random.choice(words_list)
     return secret_word
 
@@ -95,7 +108,15 @@ def is_word_guessed(secret_word, letters_guessed):
     Returns: 
         bool: True only if all the letters of secret_word are in letters_guessed, False otherwise
     '''
-    # TODO: Loop through the letters in the secret_word and check if a letter is not in lettersGuessed
+
+    for letters in secret_word:
+        if letters in letters_guessed:
+            return True
+        else:
+            return False
+    
+
+
     pass
 
 def get_guessed_word(secret_word, letters_guessed):
@@ -129,20 +150,31 @@ def is_guess_in_word(guess, secret_word):
 
 
 
-def spaceman(secret_word):
+def spaceman():
     '''
     A function that controls the game of spaceman. Will start spaceman in the command line.
     Args:
       secret_word (string): the secret word to guess.
     '''
+    
+    
 
+    # Tell the User for normal instructions
+    print(Fore.BLUE + banner + Fore.RESET)
+    gameMode = input('Welcome to ' + Fore.BLUE + 'Spaceman' + Fore.RESET + '\nChoose a game mode\n1. Normal Spaceman\n2. ' + Fore.RED + 'Illegal Spaceman\n' + Fore.RESET + 'Gamemode: ')
+    
+    if re.match(r'^[a-zA-Z]*$_', gameMode):
+        return True
+    else:
+        os.system('clear')
+        print('please input a valid respounce')
 
-    #TODO: show the player information about the game according to the project spec
+        return spaceman()
 
-    #TODO: Ask the player to guess one letter per round and check that it is only one letter
-
+    # print("\nRules are quite simple\n1. Guess One Letter at a time\n2. You run out of Guess you lose\n 3.Have Fun!!!")
+    
     #TODO: Check if the guessed letter is in the secret or not and give the player feedback
-
+    
     #TODO: show the guessed word so far
 
     #TODO: check if the game has been won or lost
@@ -154,4 +186,3 @@ def spaceman(secret_word):
 
 #These function calls that will start the game
 secret_word = load_word()
-spaceman(secret_word)
