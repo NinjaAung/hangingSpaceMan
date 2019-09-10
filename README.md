@@ -10,7 +10,7 @@ Completing this project will make me able to do
 
 
 ### Whats working right now?
-- [ ] Starter code
+- [x] Starter code
 - [ ] Entire code runs without errors
 - [ ] Words are properly generated
 - [ ] Game atcually works
@@ -24,7 +24,8 @@ Completing this project will make me able to do
 - [ ] Restart Game || Player prompts new game
 - [ ] Change the number of incorrect guesses allowed to match the length of the mystery word
 - [ ] Show the user the mystery word when they lose
-- [ ] Use ASCII art to draw the spaceman with each incorrect guess
+- [x] Use ASCII art to draw the spaceman 
+- [ ] += with each incorrect guess
 
 ### Sinsiter Gamemode || Im literally a Masochist
 Sinister Spaceman: After the user guesses a correct letter, change the mystery word to be a new mystery word that is the same word length and uses the same correctly guessed letters

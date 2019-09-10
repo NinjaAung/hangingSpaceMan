@@ -1,6 +1,76 @@
 import random
 import colorama
 
+# SpaceMan "drawings" Ninja's best attempt lol
+spaceMan = [
+    '''
+
+        +---+
+        |  |
+        o  |
+           |
+           |
+    |=======|
+    ''',
+    '''
+        +---+
+        |  |
+        o  |
+        |  |
+           |
+    |=======|
+
+    ''',
+    '''
+        +---+
+        |  |
+        o  |
+        |\ |
+           |
+    |=======|
+    ''',
+    '''
+        +---+
+        |  |
+        o  |
+       /|\ |
+           |
+    |=======|
+    ''',
+    '''
+        +---+
+        |  |
+        o  |
+       /|\ |
+         \ |
+    |=======|
+    ''',
+   '''
+        +---+
+        |  |
+        o  |
+       /|\ |
+       / \ |
+    |=======|
+    ''',
+    # Extra life ??? for Masochist route
+    '''
+        +---+
+        |  |
+           |
+           |
+           |
+    |=======|
+
+    ''',
+]
+
+
+
+
+
+
+
 def load_word():
     '''
     A function that reads a text file of words and randomly selects one to use as the secret word
@@ -8,7 +78,7 @@ def load_word():
     Returns: 
            string: The secret word to be used in the spaceman guessing game
     '''
-    f = open('word.txt', 'r')
+    f = open('words.txt', 'r')
     words_list = f.readlines()
     f.close()
     
