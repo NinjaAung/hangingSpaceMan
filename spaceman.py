@@ -130,7 +130,13 @@ def get_guessed_word(secret_word, letters_guessed):
     '''
 
     #TODO: Loop through the letters in secret word and build a string that shows the letters that have been guessed correctly so far that are saved in letters_guessed and underscores for the letters that have not been guessed yet
-
+    ret = []
+    for letter in secret_word:
+        if letter in letters_guessed:
+            ret.append(letter)
+        else:
+            ret.append('_')
+    return ''.join(ret)
 
 
 def is_guess_in_word(guess, secret_word):
@@ -146,6 +152,14 @@ def is_guess_in_word(guess, secret_word):
 
     return [x for x in guess if x in secret_word]
 
+def play_again():
+    yes_or_no = input("Would you like to play again? y/n:  ")
+    if "y".lower() in yes_or_no.lower():
+        os.system('clear')
+        return True
+    else:
+        os.system('clear')
+        return False
 
 def spaceman(secret_word):
     '''
@@ -163,6 +177,8 @@ def spaceman(secret_word):
     incorrect_guesses = 7
     spaceMan_number = int(incorrect_guesses) - 1
 
+    correct_guesses = []
+    unused_letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 
     if re.match(r'^\d', gameMode):
@@ -174,14 +190,29 @@ def spaceman(secret_word):
                 print('-' * 8)
                 letter_input = input('Guess a letter: ')
 
+                unused_letters.remove(letter_input)
+
+                if len(letter_input) != 1 and re.match(r'^\w', letter_input):
+                    print("One character only, or you'll be hanged")
+                    continue
+
+                if letter_input not in unused_letters:
+                    print("You have already tried that input, please try again")
+                    continue
+
                 if incorrect_guesses == 0:
                     print("Looks like you dead chief")
                     print("The answer was: {}".format(secret_word))
                     break
 
-                 if is_word_guessed(secret_word, correct_guesses):
+                if is_word_guessed(secret_word, correct_guesses):
                     print("Congrats!  You're not dead")
                     break
+
+                if letter_input not in unused_letters:
+                    print("You have already tried that input, please try again")
+                    continue
+                
                 
             
         elif int(gameMode) == 2:
