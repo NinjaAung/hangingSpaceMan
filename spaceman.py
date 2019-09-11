@@ -21,6 +21,15 @@ spaceMan = [
 
         +---+
         |  |
+           |
+           |
+           |
+    |=======|
+    ''',
+    '''
+
+        +---+
+        |  |
         o  |
            |
            |
@@ -150,10 +159,31 @@ def spaceman(secret_word):
     gameMode = input('Welcome to ' + Fore.BLUE + 'Spaceman' + Fore.RESET + '\nChoose a game mode:\n1. Normal Spaceman\n2. ' + Fore.RED + 'Illegal Spaceman\n' + Fore.RESET + 'Gamemode: ')
     
     # r'^[a-zA-Z]_'
-    
+
+    incorrect_guesses = 7
+    spaceMan_number = int(incorrect_guesses) - 1
+
+
+
     if re.match(r'^\d', gameMode):
         if int(gameMode) == 1:
-            print('hi')
+            os.system('clear')
+            print(spaceMan[int(spaceMan_number)])
+            print("The word is {} letters long     ||      You have {} guesses left".format(len(secret_word)), incorrect_guesses)
+            while True:
+                print('-' * 8)
+                letter_input = input('Guess a letter: ')
+
+                if incorrect_guesses == 0:
+                    print("Looks like you dead chief")
+                    print("The answer was: {}".format(secret_word))
+                    break
+
+                 if is_word_guessed(secret_word, correct_guesses):
+                    print("Congrats!  You're not dead")
+                    break
+                
+            
         elif int(gameMode) == 2:
             print('suffering')
         else:
@@ -167,7 +197,6 @@ def spaceman(secret_word):
   
         return spaceman(secret_word)
 
-    # print("\nRules are quite simple\n1. Guess One Letter at a time\n2. You run out of Guess you lose\n 3.Have Fun!!!")
     
     #TODO: Check if the guessed letter is in the secret or not and give the player feedback
     
@@ -181,4 +210,4 @@ def spaceman(secret_word):
 
 
 #These function calls that will start the game
-spaceman(load_word())
+# spaceman(load_word())
