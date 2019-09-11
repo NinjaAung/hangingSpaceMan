@@ -16,6 +16,9 @@ By: Ninjer27                        Art: @http://patorjk.com/
 ________________________________________________________________
 '''
 
+
+
+# spaceMan ASCII need to be flipped find a function that does that
 spaceMan = [
     '''
 

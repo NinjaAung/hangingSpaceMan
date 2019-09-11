@@ -12,18 +12,18 @@ Completing this project will make me able to do
 ### Whats working right now?
 - [x] Starter code
 - [x] Entire code runs without errors
-- [ ] Words are properly generated
-- [ ] Game atcually works
-- [ ] Win/lose after 7 lost
-- [ ] Ask to play again
+- [x] Words are properly generated
+- [x] Game atcually works
+- [x] Win/lose after 7 lost
+- [x] Ask to play again
 
 
 ### Stretch goals
 - [ ] Alert the user if they guessed a letter they already guessed, dosen't count
-- [ ] Actually hangman rules
-- [ ] Restart Game || Player prompts new game
+- [x] Actually hangman rules
+- [x] Restart Game || Player prompts new game
 - [ ] Change the number of incorrect guesses allowed to match the length of the mystery word
-- [ ] Show the user the mystery word when they lose
+- [x] Show the user the mystery word when they lose
 - [x] Use ASCII art to draw the spaceman 
 - [x] += with each incorrect guess
 
