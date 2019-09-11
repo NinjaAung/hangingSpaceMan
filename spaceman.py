@@ -190,6 +190,7 @@ def spaceman(secret_word):
             print('The word is {} letters long     ||      You have {} guesses left'.format(len(secret_word), incorrect_guesses))
             print()
             while True:
+                # add this to a MAIN() function to use in suffering mode
                 print('-' * 8)
                 letter_input = input('Guess a letter: ')
 
@@ -235,6 +236,7 @@ def spaceman(secret_word):
             
         elif int(gameMode) == 2:
             print('suffering')
+
         else:
             # induce true sufferin later 
             os.system('clear')
