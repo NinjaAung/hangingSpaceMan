@@ -179,8 +179,9 @@ def spaceman(secret_word):
         if int(gameMode) == 1:
             os.system('clear')
             spaceMan_number = int(incorrect_guesses) - 1
-            print(spaceMan[int(spaceMan_number)])
-            print('The word is {} letters long     ||      You have {} guesses left'.format(len(secret_word), incorrect_guesses))
+            print(Fore.BLUE+ spaceMan[int(spaceMan_number)] + Fore.RESET)
+            print('The word is ' + Fore.CYAN + '{} Letters Long'.format(len(secret_word)) + Fore.RESET)
+            print('You have ' + Fore.RED + '{} Guesses'.format(incorrect_guesses) + Fore.RESET)
             
   
             while True:
@@ -194,22 +195,23 @@ def spaceman(secret_word):
                 
 
                 if letter_input in letters_guessed:
-                    print('You have already tried that input, please try again')
+                    print('You have already tried that {}, please try again'.format(letter_input))
                     continue
 
                 letters_guessed.append(letter_input)
 
                 if is_guess_in_word(letter_input, secret_word):
+                    print('-' * 8)
                     os.system('clear')
-                    print(spaceMan[int(spaceMan_number)])
-                    print('another one!\nWord: {}'.format(get_guessed_word(secret_word, letters_guessed)))
+                    print(Fore.BLUE+ spaceMan[int(spaceMan_number)] + Fore.RESET)
+                    print('another one!\nWord: ' + Fore.LIGHTCYAN_EX + '{}'.format(get_guessed_word(secret_word, letters_guessed)) + Fore.RESET)
                 else:
                     incorrect_guesses -= 1
                     spaceMan_number = int(incorrect_guesses) - 1
                     guessed_word = get_guessed_word(secret_word, letters_guessed)
 
                     os.system('clear')
-                    print(spaceMan[int(spaceMan_number)])
+                    print(Fore.BLUE+ spaceMan[int(spaceMan_number)] + Fore.RESET)
                     print()
 
                     print("Sorry, your guess was not in the word, try again")
