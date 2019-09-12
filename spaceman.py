@@ -21,7 +21,6 @@ ________________________________________________________________
 # spaceMan ASCII need to be flipped find a function that does that
 spaceMan = [
     '''
-
         +---+
         |  |
            |
@@ -30,7 +29,6 @@ spaceMan = [
     |=======|
     ''',
     '''
-
         +---+
         |  |
         o  |
@@ -77,6 +75,17 @@ spaceMan = [
         o  |
        /|\ |
        / \ |
+    |=======|
+    '''
+]
+losing_space_man = [
+    '''
+
+        +---+
+        |  |
+  Press F For Respect
+           |
+           |
     |=======|
     '''
 ]
@@ -182,6 +191,7 @@ def spaceman(secret_word):
             print(Fore.BLUE+ spaceMan[int(spaceMan_number)] + Fore.RESET)
             print('The word is ' + Fore.CYAN + '{} Letters Long'.format(len(secret_word)) + Fore.RESET)
             print('You have ' + Fore.RED + '{} Guesses'.format(incorrect_guesses) + Fore.RESET)
+            print(secret_word)
             
   
             while True:
@@ -208,23 +218,22 @@ def spaceman(secret_word):
                 else:
                     incorrect_guesses -= 1
                     spaceMan_number = int(incorrect_guesses) - 1
+                    if incorrect_guesses == 0:
+                        print('Looks like you dead chief')
+                        print('The answer was: ' + Fore.RED + '{}'.format(secret_word) + Fore.RESET)
+                        break
+
                     guessed_word = get_guessed_word(secret_word, letters_guessed)
 
                     os.system('clear')
                     print(Fore.BLUE+ spaceMan[int(spaceMan_number)] + Fore.RESET)
                     print()
+                    print('That was incorrect. ' + Fore.RED + '{} incorrect guesses left'.format(incorrect_guesses) + Fore.RESET)
+                    print('Guessed word so far: ' + Fore.LIGHTCYAN_EX + '{}'.format(guessed_word) + Fore.RESET)
 
-                    print("Sorry, your guess was not in the word, try again")
-                    print("You have {} incorrect guesses left".format(incorrect_guesses))
-                    print("Guessed word so far: {}".format(guessed_word))
 
-                if incorrect_guesses == 0:
-                    print('Looks like you dead chief')
-                    print('The answer was: {}'.format(secret_word))
-                    break
-
-                if is_word_guessed(secret_word, letters_guessed):
-                    print("Congrats!  You're not dead") # \' present in the text
+                if incorrect_guesses < 0 and is_word_guessed(secret_word, letters_guessed):
+                    print(Fore.GREEN + "Congrats!  You're not dead" + Fore.RESET) # \' present in the text
                     break
 
 
