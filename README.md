@@ -19,13 +19,15 @@ Completing this project will make me able to do
 
 
 ### Stretch goals
-- [ ] Alert the user if they guessed a letter they already guessed, dosen't count
+- [x] Alert the user if they guessed a letter they already guessed, dosen't count
 - [x] Actually hangman rules
 - [x] Restart Game || Player prompts new game
-- [ ] Change the number of incorrect guesses allowed to match the length of the mystery word
 - [x] Show the user the mystery word when they lose
 - [x] Use ASCII art to draw the spaceman 
 - [x] += with each incorrect guess
+
+### Change guesses Wrong
+Not going to do this or it will be impossible to create states for the hangman
 
 ### Sinsiter Gamemode || Im literally a Masochist
 Sinister Spaceman: After the user guesses a correct letter, change the mystery word to be a new mystery word that is the same word length and uses the same correctly guessed letters
