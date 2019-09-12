@@ -149,7 +149,7 @@ def update_dashes(secret, cur_dash, rec_guess):
       
   return result
     
-words = ["Pneumonoultramicroscopicsilicovolcanoconiosis", "Supercalifragilisticexpialidocious", "Pseudopseudohypoparathyroidism", "Floccinaucinihilipilification", "Honorificabilitudinitatibus"]
+words = ["methionylthreonylthreonylglutaminylarginyltyrosylglutamylserylleucylphenylalanylalanylglutaminylleuc","pneumonoultramicroscopicsilicovolcanoconiosis", "supercalifragilisticexpialidocious", "pseudopseudohypoparathyroidism", "floccinaucinihilipilification", "honorificabilitudinitatibus"]
 
 secret_word = random.choice(words)
 get_guess()

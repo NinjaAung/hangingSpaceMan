@@ -187,7 +187,7 @@ def spaceman(secret_word):
         if int(gameMode) == 1:
             os.system('clear')
             spaceMan_number = int(incorrect_guesses) - 1
-            print(Fore.BLUE + spaceMan[print(spaceMan[int(spaceMan_number)])] + Fore.RESET)
+            print(Fore.BLUE + spaceMan[int(spaceMan_number)] + Fore.RESET)
             print('The word is ' + Fore.CYAN + '{} Letters Long'.format(len(secret_word)) + Fore.RESET)
             print('You have ' + Fore.RED + '{} Guesses'.format(incorrect_guesses) + Fore.RESET)
 
@@ -248,7 +248,7 @@ def spaceman(secret_word):
             # this is just in placce of the other stretch goal
             print('suffering || In progress')
             os.system('clear')
-            # print(Fore.RED + "Not an option".upper() + Fore.RESET)
+            #print(Fore.RED + "Not an option".upper() + Fore.RESET)
             os.system('./why.sh')
 
         else:
@@ -258,7 +258,7 @@ def spaceman(secret_word):
             os.system('clear')
             print(Fore.RED + "Not an option".upper() + Fore.RESET)
             os.system('./why.sh')
-            return spaceman(secret_word)
+            
     else:
         os.system('clear')
         print(Fore.RED + "please put a valid respounce".upper() + Fore.RESET)
