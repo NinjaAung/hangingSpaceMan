@@ -245,14 +245,20 @@ def spaceman(secret_word):
                 
             
         elif int(gameMode) == 2:
-            print('suffering')
+            # this is just in placce of the other stretch goal
+            print('suffering || In progress')
+            os.system('clear')
+            # print(Fore.RED + "Not an option".upper() + Fore.RESET)
+            os.system('./why.sh')
 
         else:
+            # Pneumonoultramicroscopicsilicovolcanoconiosis
+            # You chose this on urself
             # induce true sufferin later 
             os.system('clear')
             print(Fore.RED + "Not an option".upper() + Fore.RESET)
             os.system('./why.sh')
-            return # spaceman(secret_word)
+            return spaceman(secret_word)
     else:
         os.system('clear')
         print(Fore.RED + "please put a valid respounce".upper() + Fore.RESET)
