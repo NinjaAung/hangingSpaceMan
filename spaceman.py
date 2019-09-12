@@ -251,7 +251,8 @@ def spaceman(secret_word):
             # induce true sufferin later 
             os.system('clear')
             print(Fore.RED + "Not an option".upper() + Fore.RESET)
-            return spaceman(secret_word)
+            os.system('./why.sh')
+            return # spaceman(secret_word)
     else:
         os.system('clear')
         print(Fore.RED + "please put a valid respounce".upper() + Fore.RESET)
