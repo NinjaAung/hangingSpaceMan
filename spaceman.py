@@ -80,7 +80,7 @@ spaceMan = [
     |=======|
     '''
 ]
-
+spaceMan.reverse()
 
 
 
@@ -173,13 +173,12 @@ def spaceman(secret_word):
 
     incorrect_guesses = 7
     letters_guessed = []
-    spaceMan_number = int(incorrect_guesses) - 1
-
-
+    
 
     if re.match(r'^\d', gameMode):
         if int(gameMode) == 1:
             os.system('clear')
+            spaceMan_number = int(incorrect_guesses) - 1
             print(spaceMan[int(spaceMan_number)])
             print('The word is {} letters long     ||      You have {} guesses left'.format(len(secret_word), incorrect_guesses))
             
@@ -201,10 +200,18 @@ def spaceman(secret_word):
                 letters_guessed.append(letter_input)
 
                 if is_guess_in_word(letter_input, secret_word):
+                    os.system('clear')
+                    print(spaceMan[int(spaceMan_number)])
                     print('another one!\nWord: {}'.format(get_guessed_word(secret_word, letters_guessed)))
                 else:
                     incorrect_guesses -= 1
+                    spaceMan_number = int(incorrect_guesses) - 1
                     guessed_word = get_guessed_word(secret_word, letters_guessed)
+
+                    os.system('clear')
+                    print(spaceMan[int(spaceMan_number)])
+                    print()
+
                     print("Sorry, your guess was not in the word, try again")
                     print("You have {} incorrect guesses left".format(incorrect_guesses))
                     print("Guessed word so far: {}".format(guessed_word))
