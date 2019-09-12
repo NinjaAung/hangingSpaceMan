@@ -159,7 +159,7 @@ def is_guess_in_word(guess, secret_word):
     return guess in secret_word
 
 def play_again():
-    yes_or_no = input("Would you like to play again? y/n:  ")
+    yes_or_no = input('Would you like to play again? ' + Fore.GREEN + 'y/n:  ' + Fore.RESET)
     if "y".lower() in yes_or_no.lower():
         os.system('clear')
         return True
@@ -188,7 +188,7 @@ def spaceman(secret_word):
         if int(gameMode) == 1:
             os.system('clear')
             spaceMan_number = int(incorrect_guesses) - 1
-            print(Fore.BLUE+ spaceMan[int(spaceMan_number)] + Fore.RESET)
+            print(Fore.BLUE + spaceMan[int(spaceMan_number)] + Fore.RESET)
             print('The word is ' + Fore.CYAN + '{} Letters Long'.format(len(secret_word)) + Fore.RESET)
             print('You have ' + Fore.RED + '{} Guesses'.format(incorrect_guesses) + Fore.RESET)
             print(secret_word)
@@ -219,6 +219,8 @@ def spaceman(secret_word):
                     incorrect_guesses -= 1
                     spaceMan_number = int(incorrect_guesses) - 1
                     if incorrect_guesses == 0:
+                        os.system('clear')
+                        print(Fore.BLUE + losing_space_man[0] + Fore.RESET)
                         print('Looks like you dead chief')
                         print('The answer was: ' + Fore.RED + '{}'.format(secret_word) + Fore.RESET)
                         break
@@ -232,7 +234,7 @@ def spaceman(secret_word):
                     print('Guessed word so far: ' + Fore.LIGHTCYAN_EX + '{}'.format(guessed_word) + Fore.RESET)
 
 
-                if incorrect_guesses < 0 and is_word_guessed(secret_word, letters_guessed):
+                if  len(letters_guessed) == len(secret_word) and is_word_guessed(secret_word, letters_guessed):
                     print(Fore.GREEN + "Congrats!  You're not dead" + Fore.RESET) # \' present in the text
                     break
 
