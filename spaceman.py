@@ -5,6 +5,7 @@ import math
 from colorama import Fore
 
 # ACSII Ninja's best attempt lol
+
 banner = '''
 _______________________________________________________________ 
  _____                 _____             
@@ -17,8 +18,6 @@ ________________________________________________________________
 '''
 
 
-
-# spaceMan ASCII need to be flipped find a function that does that
 spaceMan = [
     '''
         +---+
@@ -191,7 +190,9 @@ def spaceman(secret_word):
             print(Fore.BLUE + spaceMan[int(spaceMan_number)] + Fore.RESET)
             print('The word is ' + Fore.CYAN + '{} Letters Long'.format(len(secret_word)) + Fore.RESET)
             print('You have ' + Fore.RED + '{} Guesses'.format(incorrect_guesses) + Fore.RESET)
-            print(secret_word)
+
+
+            #print(secret_word) for testing
             
   
             while True:
