@@ -32,6 +32,6 @@ Not going to do this or it will be impossible to create states for the hangman
 ### Sinsiter Gamemode || Im literally a Masochist
 Sinister Spaceman: After the user guesses a correct letter, change the mystery word to be a new mystery word that is the same word length and uses the same correctly guessed letters
 
-Wasn't able to do this but was, but made my own version so have fun
+Wasn't able to do this, because I made poor time mangment decisions but was, but made my own version so have fun
 
 
