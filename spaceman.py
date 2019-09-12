@@ -187,7 +187,7 @@ def spaceman(secret_word):
         if int(gameMode) == 1:
             os.system('clear')
             spaceMan_number = int(incorrect_guesses) - 1
-            print(Fore.BLUE + spaceMan[int(spaceMan_number)] + Fore.RESET)
+            print(Fore.BLUE + spaceMan[print(spaceMan[int(spaceMan_number)])] + Fore.RESET)
             print('The word is ' + Fore.CYAN + '{} Letters Long'.format(len(secret_word)) + Fore.RESET)
             print('You have ' + Fore.RED + '{} Guesses'.format(incorrect_guesses) + Fore.RESET)
 

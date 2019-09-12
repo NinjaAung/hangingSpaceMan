@@ -1,6 +1,12 @@
 import random
+from colorama import Fore
+import os
 
+'''
 
+Oh great TA or Teacher please don't grade this monstrocity
+
+'''
 
 spaceMan = [
     '''
@@ -78,6 +84,7 @@ def get_guess():
   
   # Set the dashes to the length of the secret word and set the amount of guesses 
   # the user has to 10
+  
   dashes = "_" * len(secret_word)
   guesses_left = 7
   
@@ -87,8 +94,15 @@ def get_guess():
   while guesses_left > -1 and not dashes == secret_word:
     
     # Print the amount of dashes and guesses left
+    os.system('clear')
+    spaceMan_number = int(guesses_left) - 1
+    if spaceMan_number > -1:
+        print( Fore.BLUE + spaceMan[int(spaceMan_number)] + Fore.RESET)
+    else:
+        print(Fore.RED + losing_space_man[0] + Fore.RESET)
+
     print(dashes)
-    print (str(guesses_left))
+    print (Fore.RED + str(guesses_left) + Fore.RESET)
     
     # Ask the user for input
     guess = input("Guess:")
@@ -112,12 +126,12 @@ def get_guess():
       guesses_left -= 1
     
   if guesses_left < 0:
-    print ("You lose. The word was: " + str(secret_word))
+    print ("You lose. The word was: " + Fore.RED + str(secret_word) + Fore.RESET)
   
   # If the dash string equals the secret word in the end then the
   # user wins
   else:
-    print ("Congrats! You win. The word was: " + str(secret_word))
+    print ("Congrats! You win. The word was: " + Fore.RED + str(secret_word) + Fore.RESET)
     
 # This function updates the string of dashes by replacing the dashes
 # with words that match up with the hidden word if the user manages to guess
