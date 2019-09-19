@@ -35,4 +35,19 @@ Sinister Spaceman: After the user guesses a correct letter, change the mystery w
 
 Wasn't able to do this, because I made poor time mangment decisions but was, but made my own version so have fun
 
+### Unit testing
+Run this command in terminal to Unit Test 
 
+```
+python3 -m unittest test_spaceman.py    
+```
+
+You must say N when prompted to continue the unit test
+After a message simmilar to this will apear
+
+```
+----------------------------------------------------------------------
+Ran 4 tests in 0.011s
+
+OK
+```
