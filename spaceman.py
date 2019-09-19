@@ -2,6 +2,7 @@ import random
 import os
 import re
 import math
+import unittest
 from colorama import Fore
 
 # ACSII Ninja's best attempt lol

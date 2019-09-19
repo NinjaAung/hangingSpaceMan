@@ -16,7 +16,7 @@ Completing this project will make me able to do
 - [x] Game atcually works
 - [x] Win/lose after 7 lost
 - [x] Ask to play again
-
+- [x] Add Unit Tests
 
 ### Stretch goals
 - [x] Alert the user if they guessed a letter they already guessed, dosen't count
