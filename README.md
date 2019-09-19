@@ -25,7 +25,7 @@ Completing this project will make me able to do
 - [x] Show the user the mystery word when they lose
 - [x] Use ASCII art to draw the spaceman 
 - [x] += with each incorrect guess
-- [ ] Add <3 Unit Test
+- [x] Add <3 Unit Test
 
 ### Change guesses Wrong
 Not going to do this or it will be impossible to create states for the hangman
