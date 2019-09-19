@@ -16,7 +16,7 @@ Completing this project will make me able to do
 - [x] Game atcually works
 - [x] Win/lose after 7 lost
 - [x] Ask to play again
-- [x] Add Unit Tests
+- [x] Add 1 - 3 Unit Tests
 
 ### Stretch goals
 - [x] Alert the user if they guessed a letter they already guessed, dosen't count
@@ -25,6 +25,7 @@ Completing this project will make me able to do
 - [x] Show the user the mystery word when they lose
 - [x] Use ASCII art to draw the spaceman 
 - [x] += with each incorrect guess
+- [ ] Add <3 Unit Test
 
 ### Change guesses Wrong
 Not going to do this or it will be impossible to create states for the hangman
