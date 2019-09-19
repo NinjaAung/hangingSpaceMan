@@ -127,9 +127,6 @@ def is_word_guessed(secret_word, letters_guessed):
             return False
     
 
-
-    pass
-
 def get_guessed_word(secret_word, letters_guessed):
     '''
     A function that is used to get a string showing the letters guessed so far in the secret word and underscores for letters that have not been guessed yet.
