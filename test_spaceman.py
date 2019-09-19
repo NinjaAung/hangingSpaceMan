@@ -33,7 +33,7 @@ class word_loaded_test(unittest.TestCase):
         self.assertIsNotNone(spaceman.load_word(), 'Word was loaded')
 
 
-''' Check if word was guessed properly in both cases guessed_word and guess_in_word'''
+''' Check if word was guessed properly in both cases guessed_word and guess_in_word: Fail Case: Word not Guessed'''
 class test_guessed_word(unittest.TestCase):
 
     '''
